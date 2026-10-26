@@ -1,0 +1,16 @@
+services:
+  registration-service:
+    build: ./registration-service
+    container_name: registration-service
+    env_file: ./registration-service/.env
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+
+  auth-service:
+    build: ./auth-service
+    container_name: auth-service
+    env_file: ./auth-service/.env
+    ports:
+      - "3002:3002"
+    restart: unless-stopped
